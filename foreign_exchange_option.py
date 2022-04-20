@@ -1,19 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-### foreign Exchange Option ###
-
-
-# In[6]:
 
 
 import math
@@ -27,9 +11,6 @@ def fx_option_d1(strike, term, spot, volatility, domestic_rate, foreign_rate):
     d1 =(math.log(spot/strike) + (domestic_rate - foreign_rate + (volatility*volatility)/2)* term)/(volatility*math.sqrt(term))
     return d1
     
-
-
-# In[7]:
 
 
 import math
@@ -46,14 +27,6 @@ def fx_option_d2(term, volatility, d1):
     return d2
 
 
-# In[ ]:
-
-
-
-
-
-# In[8]:
-
 
 def discount(rate,term):
     """Calculate the discount factor for given simple interest rate and term.
@@ -69,8 +42,6 @@ def discount(rate,term):
     return discount_rate
     
 
-
-# In[9]:
 
 
 from datetime import date 
@@ -117,13 +88,9 @@ def years_apart(date1, date2):
     return fraction
 
 
-# In[10]:
-
 
 years_apart(date(2019, 7, 1), date(2019, 4, 1))
 
-
-# In[11]:
 
 
 def fx_option_price(call, strike, expiration, spot_date,
@@ -161,16 +128,5 @@ def fx_option_price(call, strike, expiration, spot_date,
         return '%.10f'% value
 
 fx_option_price(True, 152, date(2019,7,1), date(2019,4,1), 150, 0.13, 0.03, 0.04)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 
 
